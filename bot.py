@@ -3,6 +3,7 @@ from variables import *
 from discord.ext import commands
 import json
 import random
+import os
 client=commands.Bot(command_prefix=';')
 f=open('messages.json')
 messages=json.load(f)
@@ -10,6 +11,10 @@ messages=json.load(f)
 @client.event
 async def on_ready():
     print('y')
+
+for file in os.listdir('./cogs'):
+    if file.endswith('py'):
+        client.load_extension(f'cogs.{file[:-3]}')
 
 @client.event
 async def on_member_join(member):

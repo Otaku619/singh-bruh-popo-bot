@@ -1,15 +1,26 @@
 {
     "WELCOME":
-    ["Bhelcum to the server, {}",
-    "The napunsak bawasir {} is here", 
-    "Thanks for joining the gangs of dholakpur, {}",
-    "Imagine being as lifeless as {} as to come here"
+    [
+        "Bhelcum to the server, {}",
+        "The napunsak bawasir {} is here", 
+        "Thanks for joining the gangs of dholakpur, {}",
+        "Imagine being as lifeless as {} as to come here"
     ],
     
     "BYE":
-    [  "ja na gan*u {}",
+    [  
+       "ja na gan*u {}",
        "why u leave {} ;-;",
        "Bye we will miss you {}(Actually we won't)",
        "{}, thanks for being a niggerchod and leaving"
+    ]
+    ,
+    "FREE":
+    [
+        "{} has been awarded {} for being a total bum",
+        "Here {}, have {} for doing absolutely nothing, you lowlife",
+        "Why dont you go and work instead of asking for free stuff, {}-san",
+        "Wow you got free stuff {}, how does it feel to be a worse person than you were a minute ago (Money gained: {})",
+        "I'm not Arvind Kejriwal but {}, here have this free {}"
     ]
 }
