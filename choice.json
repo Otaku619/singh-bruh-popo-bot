@@ -1,0 +1,69 @@
+{
+    "WELCOME":
+    [
+        "Bhelcum to the server, {}",
+        "The napunsak bawasir {} is here", 
+        "Thanks for joining the gangs of dholakpur, {}",
+        "Imagine being as lifeless as {} as to come here"
+    ],
+    "BYE":
+    [  
+       "ja na gan*u {}",
+       "why u leave {} ;-;",
+       "Bye we will miss you {}(Actually we won't)",
+       "{}, thanks for being a niggerchod and leaving"
+    ],
+    "FREE":
+    [
+        "{} has been awarded {} for being a total bum",
+        "Here {}, have {} for doing absolutely nothing, you lowlife",
+        "Why dont you go and work instead of asking for free stuff, {}-san",
+        "Wow you got free stuff {}, how does it feel to be a worse person than you were a minute ago (Money gained: {})",
+        "I'm not Arvind Kejriwal but {}, here have this free {}"
+    ],
+    "HUG":
+    [
+        "{}, stop being depressed",
+        "Vro, you alright?",
+        "{}, why lonely? I'm here"
+    ],
+    "WINK":
+    [
+        "Stop winking at youself, {}",
+        "Are you that lonely?",
+        "Now, {}, that's some plain stupidity"
+    ],
+    "PAT":
+    [
+        "How self obsessed can one be?",
+        "Stop patting yourselves {}, you're just making a fool out of yourself",
+        "Self appreciation is only good if it's not taken too far {}"
+    ],
+    "COLOURS":
+    [
+        "0x00ffff",
+        "0xff6347",
+        "0x2f4f6f",
+        "0xde0c44",
+        "0xeca856",
+        "0xeca856",
+        "0x63613b",
+        "0x63613b",
+        "0x619053",
+        "0x67414c",
+        "0x67414c",
+        "0xa708e9",
+        "0x66667a",
+        "0xb85122",
+        "0xf191b5",
+        "0x10792f",
+        "0x10792f",
+        "0x965667",
+        "0xb1787f",
+        "0xbcee1d",
+        "0x20cba9",
+        "0x5b770b",
+        "0x6c2797",
+        "0xd27280"
+    ]
+}
