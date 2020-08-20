@@ -3,3 +3,5 @@ discord.py
 Pillow
 aiohttp
 io
+paffy
+youtube-dl

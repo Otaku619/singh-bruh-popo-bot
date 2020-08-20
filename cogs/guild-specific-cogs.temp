@@ -1,0 +1,22 @@
+import discord
+from discord.ext import commands
+import sys
+
+class my_server(commands.Cog):
+
+    def __init__(self, client):
+        self.client = client
+    @commands.command()
+    @commands.has_role('randi')
+    async def gandu(self, ctx):
+        _embed=discord.Embed()
+        _embed.set_image(url='https://imgur.com/SBO8b20.png')
+        if ctx.g      
+        await ctx.send(embed=_embed)
+    @gandu.error
+    async def clear_error(self, ctx, error):
+        if isinstance(error, commands.MissingRole):
+            await ctx.send('Become a randi to use this command :smiling_imp:')
+
+def setup(client):
+    client.add_cog(my_server(client))
