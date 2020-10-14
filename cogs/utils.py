@@ -93,10 +93,10 @@ class utils(commands.Cog):
 
     @commands.command()
     async def echo(self, ctx, *, msg):
-        if not (str(msg).startswith(';') or ctx.bot):
+        # if not (str(msg).startswith(';') or ctx.bot):
             await ctx.send(msg)
-        else:
-            await ctx.send('Why would you run my own commands by echoing me, wanna break me, eh?')
+        # else:
+            # await ctx.send('Why would you run my own commands by echoing me, wanna break me, eh?')
         
     @commands.command()
     async def members(self, ctx):

@@ -6,9 +6,10 @@ import random
 import os
 import time
 
-client=commands.Bot(command_prefix=';', case_insensitive=True)
+client = commands.Bot(command_prefix=';', case_insensitive=True)
 file_ = open('choice.json')
 choice_ = json.load(file_)
+
 
 @client.event
 async def on_ready():
@@ -22,12 +23,12 @@ async def on_ready():
         small_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/320px-Flag_of_Pakistan.svg.png',
         large_image_text='Jai Trinidad',
         small_image_text='Jai Pakistan'
-        ))
+    ))
     # print(GOOGLE_API)
     # print(type(GOOGLE_API))
 
 for py_file in os.listdir('./cogs'):
-    if py_file.endswith('py'): #and py_file != 'variables_.py':
+    if py_file.endswith('py'):  # and py_file != 'variables_.py':
         client.load_extension(f'cogs.{py_file[: -3]}')
 
 # client.load_extension('guild-specific-cogs')
@@ -39,7 +40,6 @@ for py_file in os.listdir('./cogs'):
 # @client.command()
 # async def unload(ctx, *, msg):
 #     client.unload_extension(f'cogs.{msg}')
-
 
 
 client.run(BOT_TOKEN)

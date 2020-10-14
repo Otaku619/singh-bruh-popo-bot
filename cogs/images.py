@@ -17,15 +17,18 @@ choice_ = json.load(file_)
 
 # gis = GoogleImagesSearch(GOOGLE_API,GOOGLE_CX)
 # gis = GoogleImagesSearch('AIzaSyBeX06-SqwSm42sDRE9m8EblOi39P0wC3c','1d9bda494833b26a6')
+
+
 async def image_fetch_api(session, _url):
     async with session.get(_url) as response:
-            return json.loads(await response.text())
+        return json.loads(await response.text())
+
 
 class Animals(commands.Cog):
 
     def __init__(self, client):
         self.client = client
-    
+
     @commands.command(aliases=['pussy', 'neko', 'nya', 'meow'])
     async def cat(self, ctx):
         try:
@@ -44,9 +47,9 @@ class Animals(commands.Cog):
                 url = await image_fetch_api(session, 'https://api.thedogapi.com/v1/images/search?api_key={DOG_API}')
                 await ctx.send(embed=discord.Embed(
                     title="🐈 Doggo >.<", url=url[0]['url']
-                # ).add_field(name='Name: ', value=url[0]['breeds'][0]['name']
-                # ).add_field(name='Breed Group: ', value=url[0]['breeds'][0]['breed_group']
-                # ).add_field(name='Lifespan: ', value=url[0]['breeds'][0]['life_span']
+                    # ).add_field(name='Name: ', value=url[0]['breeds'][0]['name']
+                    # ).add_field(name='Breed Group: ', value=url[0]['breeds'][0]['breed_group']
+                    # ).add_field(name='Lifespan: ', value=url[0]['breeds'][0]['life_span']
                 ).set_image(url=url[0]['url']))
         except:
             await ctx.send('Requested content timed out')
@@ -84,13 +87,14 @@ class Animals(commands.Cog):
         except:
             await ctx.send('Requested content timed out')
 
+
 class Animu(commands.Cog):
 
     def __init__(self, client):
         self.client = client
 
     @commands.command()
-    async def hug(self, ctx, user : discord.Member = None):
+    async def hug(self, ctx, user: discord.Member = None):
         try:
             user1, user2 = ctx.author, user
             if user == None:
@@ -108,13 +112,14 @@ class Animu(commands.Cog):
                         await ctx.send("Thanks for hugging me OwO")
         except:
             await ctx.send('Requested content timed out')
+
     @hug.error
     async def clear_hug_error(self, ctx, error):
         if isinstance(error, commands.BadArgument):
             await ctx.send('No such user, let me hug you instead, uwu')
 
     @commands.command()
-    async def wink(self, ctx, user : discord.Member = None):
+    async def wink(self, ctx, user: discord.Member = None):
         try:
             user1, user2 = ctx.author, user
             if user == None:
@@ -132,13 +137,14 @@ class Animu(commands.Cog):
                         await ctx.send("Stop winking at me, it's embarrassing!!")
         except:
             await ctx.send('Requested content timed out')
+
     @wink.error
     async def clear_wink_error(self, ctx, error):
         if isinstance(error, commands.BadArgument):
             await ctx.send('No one to wink at ;-;')
-    
+
     @commands.command()
-    async def pat(self, ctx, user : discord.Member=None):
+    async def pat(self, ctx, user: discord.Member = None):
         try:
             user1, user2 = ctx.author, user
             if user == None:
@@ -156,18 +162,20 @@ class Animu(commands.Cog):
                         await ctx.send("OwO thanks for the pat!")
         except:
             await ctx.send('Requested content timed out')
+
     @pat.error
     async def clear_pat_error(self, ctx, error):
         if isinstance(error, commands.BadArgument):
             await ctx.send('User not found so i\'ll pat you instead, uwu')
 
+
 class filters(commands.Cog):
 
     def __inti__(self, client):
         self.client = client
-    
+
     @commands.command()
-    async def invert(self, ctx, user : discord.Member=None):
+    async def invert(self, ctx, user: discord.Member = None):
         try:
             if user == None:
                 user = ctx.author
@@ -181,11 +189,12 @@ class filters(commands.Cog):
             os.remove(f'./filter/invert/{user.id}.png')
         except:
             await ctx.send('Requested content timed out')
+
     @invert.error
     async def clear_invert_error(self, ctx, error):
         if isinstance(error, commands.BadArgument):
             await ctx.send('No such user, dummy-dum')
-        
+
 
 def setup(client):
     client.add_cog(Animals(client))
