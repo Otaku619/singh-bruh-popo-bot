@@ -8,7 +8,6 @@ import urllib.parse
 from bs4 import BeautifulSoup
 file_ = open('choice.json')
 choice_ = json.load(file_)
-a = 5
 
 
 class sauce(commands.Cog):
@@ -16,9 +15,11 @@ class sauce(commands.Cog):
         self.client = client
         self.sauce = SauceNao()
 
-    def fix_extension(self, url):
-        url = url.split('.')
-        return ('.').join(url[0:-1])+'.png?'+url[-1].split('?')[-1]
+    def fix_extension(self, url_):
+        url = url_.split('.')
+        if url[-1].split('?')[0] in ['jpg', 'jpeg', 'png', 'gif']:
+            return url_
+        return ('.').join(url[0:-1])+'.png'+('?'+url[-1].split('?')[-1] if len(url[-1].split('?')) > 1 else '')
 
     @commands.command(aliases=['snao', ])
     async def saucenao(self, ctx, *, url: str = ''):
@@ -59,7 +60,7 @@ class sauce(commands.Cog):
             await ctx.send(embed=embed_)
         except Exception as e:
             print(e)
-            await ctx.send('Invalid URL bruh')
+            await ctx.send('Invalid URL or wrong image format')
 
     @saucenao.error
     async def clear_saucenao_error(self, ctx, error):
@@ -84,6 +85,7 @@ class sauce(commands.Cog):
                     value=';iqdb <image_url>'))
                 return
             url_ = self.fix_extension(url_)
+            print(url_)
             searchURL = f'https://iqdb.org/?url={url_}'
             soup = BeautifulSoup(requests.get(searchURL).text, 'lxml')
             sauce = soup.find('div', class_='pages')
@@ -103,13 +105,14 @@ class sauce(commands.Cog):
                 inline=False).add_field(
                 name='Want more results?',
                 value=f'[Click here for all search results]({searchURL})',
-                inline=0)
+                inline=0).set_footer(
+                text='Tip: Click on the title for a full sized image')
             await ctx.send(embed=embed_)
         except Exception as e:
             print(e)
-            await ctx.send("Invalid URL or couldn't find")
+            await ctx.send("Invalid URL or wrong image format")
 
-    @ iqdb.error
+    @iqdb.error
     async def clear_iqdb_error(self, ctx, error):
         if isinstance(error, commands.BadArgument):
             await ctx.send('You need to put an URL not your dead\
