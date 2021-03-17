@@ -1,4 +1,5 @@
 import discord
+import random
 from discord.ext import commands
 
 
@@ -26,6 +27,25 @@ class fun(commands.Cog):
     async def noone(self, ctx):
         await ctx.send(file=discord.File('./imgs/who.jpg'))
 
+    @commands.command(aliases=['delhi', 'takezo', ])
+    async def rape(self, ctx):
+        await ctx.send(file=discord.File('./imgs/rape.png'))
+
+    @commands.command()
+    async def choot(self, ctx):
+        await ctx.send("<@622467030540484608>")
+
+    @commands.command(aliases=['chamaar', 'bra', 'brambedkar', 'ambedkar'])
+    async def chamar(self, ctx):
+        await ctx.send("https://www.youtube.com/watch?v=RMcWrN9UUPE")
+
+    @commands.command(aliases=['rping'])
+    async def randomping(self, ctx):
+        _list = []
+        async for i in ctx.message.channel.guild.fetch_members(limit=None):
+            _list.append(i)
+        print(ctx.message.channel.guild.members)
+        await ctx.send(f"{random.choice(_list).mention}")
     # @commands.command()
     # async def nitro_check(self, ctx):
     #     await ctx.send(file=discord.File('./imgs/video0_6.mov'))
@@ -33,4 +53,3 @@ class fun(commands.Cog):
 
 def setup(client):
     client.add_cog(fun(client))
-

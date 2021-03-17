@@ -1,7 +1,0 @@
-discord.py
-# Google-Images-Search
-Pillow
-aiohttp
-io
-paffy
-youtube-dl
